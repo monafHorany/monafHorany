@@ -1,0 +1,66 @@
+name: Refresh profile cards
+
+on:
+  schedule:
+    - cron: "17 3 * * *" # daily, 03:17 UTC
+  workflow_dispatch:
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+
+jobs:
+  cards:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      # Stats + top languages — dark and light variants (<picture> picks one).
+      # Optional: add a repo secret STATS_TOKEN (classic PAT, scopes: repo, read:user)
+      # to include private-repo activity. Without it, public data only.
+      - name: Stats (dark)
+        uses: stats-organization/github-readme-stats-action@v2
+        with:
+          card: stats
+          options: show_icons=true&include_all_commits=true&hide_border=true&border_radius=16&bg_color=0B0F17&title_color=A78BFA&icon_color=22D3EE&text_color=C9D1D9&ring_color=A78BFA
+          path: profile/stats-dark.svg
+          token: ${{ secrets.STATS_TOKEN || secrets.GITHUB_TOKEN }}
+
+      - name: Stats (light)
+        uses: stats-organization/github-readme-stats-action@v2
+        with:
+          card: stats
+          options: show_icons=true&include_all_commits=true&border_radius=16&border_color=D0D7DE&bg_color=FFFFFF&title_color=7C3AED&icon_color=0891B2&text_color=1F2328&ring_color=7C3AED
+          path: profile/stats-light.svg
+          token: ${{ secrets.STATS_TOKEN || secrets.GITHUB_TOKEN }}
+
+      - name: Top languages (dark)
+        uses: stats-organization/github-readme-stats-action@v2
+        with:
+          card: top-langs
+          options: layout=compact&langs_count=8&hide=html,css,scss&hide_border=true&border_radius=16&bg_color=0B0F17&title_color=A78BFA&text_color=C9D1D9
+          path: profile/langs-dark.svg
+          token: ${{ secrets.STATS_TOKEN || secrets.GITHUB_TOKEN }}
+
+      - name: Top languages (light)
+        uses: stats-organization/github-readme-stats-action@v2
+        with:
+          card: top-langs
+          options: layout=compact&langs_count=8&hide=html,css,scss&border_radius=16&border_color=D0D7DE&bg_color=FFFFFF&title_color=7C3AED&text_color=1F2328
+          path: profile/langs-light.svg
+          token: ${{ secrets.STATS_TOKEN || secrets.GITHUB_TOKEN }}
+
+      - name: Contribution snake
+        uses: Platane/snk/svg-only@v3
+        with:
+          github_user_name: ${{ github.repository_owner }}
+          outputs: |
+            profile/snake-light.svg?color_snake=#7C3AED
+            profile/snake-dark.svg?palette=github-dark&color_snake=#A78BFA
+
+      - name: Commit cards
+        uses: stefanzweifel/git-auto-commit-action@v7
+        with:
+          commit_message: "chore: refresh profile cards"
+          file_pattern: profile/*.svg

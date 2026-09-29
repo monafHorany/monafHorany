@@ -122,14 +122,13 @@ Real-time video calls on a fully self-hosted stack, with no managed platform in 
   </picture>
 </p>
 
-<!--
-  Connect — uncomment and fill in whichever you want public:
+## 🤝 Let's connect
 
 <p align="center">
-  <a href="https://www.linkedin.com/in/YOUR-HANDLE"><img src="https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge" alt="LinkedIn"></a>
-  <a href="mailto:YOU@example.com"><img src="https://img.shields.io/badge/Email-Say_hi-EA4335?style=for-the-badge&logo=gmail&logoColor=white" alt="Email"></a>
-  <a href="https://YOUR-SITE.com"><img src="https://img.shields.io/badge/Portfolio-Visit-7C3AED?style=for-the-badge" alt="Portfolio"></a>
+  <a href="https://monafhorany.com/"><img src="https://img.shields.io/badge/Website-monafhorany.com-7C3AED?style=for-the-badge&logo=googlechrome&logoColor=white" alt="Website"></a>
+  <a href="https://www.linkedin.com/in/monaf-horany-40a8471aa/"><img src="https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge" alt="LinkedIn"></a>
+  <a href="https://www.instagram.com/monaf_horany/"><img src="https://img.shields.io/badge/Instagram-Follow-E4405F?style=for-the-badge&logo=instagram&logoColor=white" alt="Instagram"></a>
+  <a href="https://www.facebook.com/abo.almagd.716/"><img src="https://img.shields.io/badge/Facebook-Follow-0866FF?style=for-the-badge&logo=facebook&logoColor=white" alt="Facebook"></a>
 </p>
--->
 
 <p align="center"><sub>Thanks for stopping by ✨ · cards refresh daily via GitHub Actions</sub></p>
