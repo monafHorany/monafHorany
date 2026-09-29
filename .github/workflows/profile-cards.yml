@@ -39,7 +39,7 @@ jobs:
         uses: stats-organization/github-readme-stats-action@v2
         with:
           card: top-langs
-          options: layout=compact&langs_count=8&hide=html,css,scss&hide_border=true&border_radius=16&bg_color=0B0F17&title_color=A78BFA&text_color=C9D1D9
+          options: layout=compact&langs_count=8&hide=html,css,scss,php&size_weight=0.5&count_weight=0.5&hide_border=true&border_radius=16&bg_color=0B0F17&title_color=A78BFA&text_color=C9D1D9
           path: profile/langs-dark.svg
           token: ${{ secrets.STATS_TOKEN || secrets.GITHUB_TOKEN }}
 
@@ -47,7 +47,7 @@ jobs:
         uses: stats-organization/github-readme-stats-action@v2
         with:
           card: top-langs
-          options: layout=compact&langs_count=8&hide=html,css,scss&border_radius=16&border_color=D0D7DE&bg_color=FFFFFF&title_color=7C3AED&text_color=1F2328
+          options: layout=compact&langs_count=8&hide=html,css,scss,php&size_weight=0.5&count_weight=0.5&border_radius=16&border_color=D0D7DE&bg_color=FFFFFF&title_color=7C3AED&text_color=1F2328
           path: profile/langs-light.svg
           token: ${{ secrets.STATS_TOKEN || secrets.GITHUB_TOKEN }}
 
